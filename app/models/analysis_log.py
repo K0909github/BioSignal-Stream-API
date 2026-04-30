@@ -5,10 +5,12 @@ from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 
 
 class Base(DeclarativeBase):
+    # SQLAlchemyのベースクラス
     pass
 
 
 class AnalysisLog(Base):
+    # 解析ログを保存するテーブル
     __tablename__ = "analysis_logs"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)

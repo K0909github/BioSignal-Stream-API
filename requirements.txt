@@ -1,6 +1,10 @@
+# APIフレームワーク
 fastapi==0.115.0
+# ASGIサーバー
 uvicorn[standard]==0.30.6
+# バリデーションと設定管理
 pydantic==2.8.2
 pydantic-settings==2.4.0
+# ORMとPostgreSQLドライバ
 SQLAlchemy==2.0.34
 asyncpg==0.29.0

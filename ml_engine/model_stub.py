@@ -1,5 +1,5 @@
 def predict_scores(features: dict) -> dict:
-    # Deterministic stub to keep behavior stable for tests and demos.
+    # テスト用の決定論的な疑似モデル
     mean = float(features.get("mean", 0.0))
     std = float(features.get("std", 0.0))
     sr = float(features.get("sampling_rate", 1.0))

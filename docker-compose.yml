@@ -1,4 +1,5 @@
 services:
+  # FastAPIアプリ
   api:
     build:
       context: .
@@ -8,7 +9,9 @@ services:
     ports:
       - "8000:8000"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
+  # PostgreSQL
   db:
     image: postgres:16
     environment:
@@ -19,6 +22,12 @@ services:
       - "5432:5432"
     volumes:
       - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d biosignal"]
+      interval: 3s
+      timeout: 3s
+      retries: 10
 
 volumes:
+  # DBデータの永続化
   db_data:

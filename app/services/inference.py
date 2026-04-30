@@ -4,6 +4,7 @@ from ml_engine.model_stub import predict_scores
 
 
 async def run_inference(payload: PredictRequest) -> dict:
+    # 前処理 -> 推論（スタブ）
     features = preprocess_signal(payload)
     scores = predict_scores(features)
     return {

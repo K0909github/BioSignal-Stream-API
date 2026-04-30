@@ -1,4 +1,5 @@
 def extract_features(values: list[float], sampling_rate: int) -> dict:
+    # 最小限の特徴量（平均・分散）を計算する簡易実装
     if not values:
         return {"mean": 0.0, "std": 0.0, "sampling_rate": sampling_rate}
 

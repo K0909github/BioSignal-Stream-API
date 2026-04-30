@@ -5,6 +5,7 @@ from app.schemas.predict import PredictRequest
 
 
 async def log_analysis(session: AsyncSession, payload: PredictRequest, result: dict) -> int:
+    # 推論結果とメタ情報をDBに保存
     row = AnalysisLog(
         user_id=payload.user_id,
         device_id=payload.device_id,
