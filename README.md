@@ -21,15 +21,7 @@ docker compose up --build
 
 ### 2) 予測APIのテスト
 ```bash
-curl -X POST http://localhost:8000/api/v1/predict \
-  -H "Content-Type: application/json" \
-  -d '{
-    "user_id": "user-001",
-    "device_id": "device-abc",
-    "signal_type": "EEG",
-    "sampling_rate": 256,
-    "values": [0.1, 0.2, 0.15, 0.05, 0.0, -0.1, -0.05]
-  }'
+curl -X POST http://localhost:8000/api/v1/predict -H "Content-Type: application/json" -d '{ "user_id": "user-001", "device_id": "device-abc", "signal_type": "EEG", "sampling_rate": 256, "values": [0.1, 0.2, 0.15, 0.05, 0.0, -0.1, -0.05] }'
 ```
 
 ## API仕様（概要）
